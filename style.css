@@ -10,13 +10,10 @@ body {
     height: 100vh;
     background: linear-gradient(to right, #4facfe, #00f2fe);
     overflow: hidden;
-}
-
-.container {
     display: flex;
     flex-direction: column;
-    gap: 70px;
-    margin: 90px 0 0 80px;
+    gap: 50px;
+    margin: 60px 0 0 70px;
 }
 
 .div-name-list {
@@ -60,17 +57,22 @@ button:active {
     opacity: 0.5;
 }
 
+.display {
+    display: flex;
+    align-items: center;
+}
+
 .div-list {
-    max-width: 500px;
-    max-height: 400px;
+    width: 500px;
+    max-height: 350px;
     word-break: break-word;
-    display: none;
     overflow-y: scroll;
+    display: none;
 }
 
 .task-checkbox {
-    height: 20px;
-    width: 20px;
+    max-height: 20px;
+    max-width: 20px;
     margin-right: 20px;
 }
 
@@ -88,23 +90,63 @@ ul {
 
 li {
     border-bottom: 1px solid #9e9c9c;
-    display: flex;
+    display: flex; 
     align-items: center;
 }
 
 .remove-btn {
-    height: 30px;
-    width: 30px;
+    max-height: 30px;
+    max-width: 30px;
     border-radius: 0;
     margin-left: 20px;
     margin-bottom: 5px;
 }
 
 h1 {
-    display: flex;
     color: #fff;
     font-size: 60px;
-    margin-left: 650px;
-    position: absolute;
     font-weight: 800;
+    margin-left: 90px;
+}
+
+@media screen and (max-width: 430px) {
+
+    body {
+        width: 80%;
+        gap: 50px;
+        overflow: hidden;
+        margin-left: 50px;
+        margin-top: 100px;
+    }
+
+    h1 {
+        margin-left: 55px;
+        font-size: 40px;
+        position: absolute;
+        top: 40px;
+    }
+
+    .div-name-list {
+        width: 300px;
+        height: 80px;
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+
+   .div-list {
+    width: 300px;
+   }
+
+   .display {
+    /* justify-content: center; */
+    /* align-items: center; */
+   }
+
+
+
+
+
+
+
+
 }
