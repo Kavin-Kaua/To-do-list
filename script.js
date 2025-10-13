@@ -19,7 +19,7 @@ function btn() {
     // Verifica se o usuário digitou alguma coisa (não está vazio)
     // ex: "Estudar JavaScript" !== '' retorna true
     if (task !== '') {
-        
+
         // Cria um novo item de lista
         // ex: <li></li>
         const li = document.createElement('li')
@@ -111,6 +111,7 @@ function btn() {
 
 // Função que verifica se deve mostrar ou esconder a lista de tarefas
 function checkTasksVisibility() {
+
     // Seleciona a lista de tarefas
     // ex: <ul id="task-list">
     const taskList = document.getElementById('task-list')
@@ -132,6 +133,7 @@ function checkTasksVisibility() {
 
 // Função que configura o evento do Enter no campo de input
 function setupEnterKeyListener() {
+    
     // Seleciona o mesmo campo de input usado na função btn()
     // ex: <input class="input" type="text" placeholder="Digite uma tarefa">
     const input = document.querySelector('.input')
