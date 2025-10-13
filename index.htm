@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do List</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,26 +14,29 @@
 
 <body>
 
-    <div class="div-name-list">
+    <div class="container">
 
-        <input class="input" placeholder="Adicionar Tarefas">
+        <div class="div-name-list">
 
-        <button onclick="btn()" class="btn">Add</button>
-    </div>
+            <input class="input" placeholder="Adicionar Tarefas">
 
-    <div class="display"> 
-
-        <div class="div-list">
-
-            <ul id="task-list"> </ul>
-
+            <button onclick="btn()" class="btn-add">Add</button>
         </div>
-        <h1>TO DO LIST</h1>
-    </div>
 
-    
+        <div class="display">
+
+            <div class="div-list">
+
+                <ul id="task-list"> </ul>
+
+            </div>
+            <h1>TO DO LIST</h1>
+        </div>
+
+    </div>
 
 </body>
+
 
 <script src="./script.js"></script>
 
