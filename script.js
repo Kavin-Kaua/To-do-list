@@ -1,6 +1,7 @@
 function btn() {
     // Seleciona o campo de input onde o usuário digita a tarefa
     // ex: <input class="input" type="text" placeholder="Digite uma tarefa">
+    
     const input = document.querySelector('.input')
 
     // Pega o texto digitado e remove espaços em branco no início e fim
