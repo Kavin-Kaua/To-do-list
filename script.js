@@ -40,6 +40,11 @@ function btn() {
         removeBtn.textContent = '🗑'
         removeBtn.className = 'remove-btn'
 
+        const editBtn = document.createElement('button')
+        editBtn.textContent = '📝'
+        editBtn.className = 'edit-btn'
+        editBtn.style.background = 'none'
+
         // Define o que acontece quando clica no botão de remover
         // ex: remove a tarefa da lista e verifica se ainda há outras tarefas
         removeBtn.onclick = function () {
@@ -47,11 +52,44 @@ function btn() {
             checkTasksVisibility()
         }
 
+        // 📝 botão editar
+        editBtn.onclick = function () {
+            const editInput = document.createElement('input')
+            editInput.type = 'text'
+            editInput.value = taskText.textContent
+            editInput.className = 'edit-input'
+
+            // substitui o texto pelo campo de edição
+            li.replaceChild(editInput, taskText)
+            editInput.focus()
+
+            // salva ao pressionar Enter
+            editInput.addEventListener('keydoen', e => {
+                if (e.key === 'Enter') {
+                    saveEdit()
+                }
+            })
+
+            // salva ao clicar fora
+            editInput.addEventListener('blur', saveEdit)
+
+            function saveEdit() {
+                const newText = editInput.value.trim()
+                if (newText !== '') {
+                    taskText.textContent = newText
+                }
+                li.replaceChild(taskText, editInput)
+            }
+
+        }
+
         // Adiciona todos os elementos dentro do item da lista
         // ex: <li><checkbox><span>texto</span><button>🗑</button></li>
+        li.appendChild(editBtn)
         li.appendChild(checkbox)
         li.appendChild(taskText)
         li.appendChild(removeBtn)
+        
 
         // Adiciona o item completo na lista de tarefas
         // ex: coloca a <li> dentro de <ul id="task-list">
